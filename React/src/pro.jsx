@@ -1,4 +1,5 @@
-import React from "react";
+import React, { useState } from "react";
+
 const list = [
     {
       title: "React ",
@@ -19,15 +20,11 @@ const list = [
   ];
   
   
-function getTitle(title) {
-    return title;
-}
-function List(){
-    return(
+const getTitle = (title) => title;
+const List = () => (
         <ul>
-            {list.map(function (item) {
-                return(
-                    <li key={item.object}>
+            {list.map((item) => (
+                    <li key={item.objectID}>
                     <span>
                     <a href={item.url}>{item.title}</a> 
                     </span> 
@@ -35,22 +32,32 @@ function List(){
                     <span>{item.num_comments}</span>
                     <span>{item.points}</span>
                     </li>
-                );
-            })}
+            ))}
         </ul>
-    )
-}
-function Search() {
-    return (
-        <div>
-            <label htmlFor="search">Search: </label>
-            <input id="search" type="text" />
-        </div>
-        );
-    }
-function Pro() {
+);
 
-  return (
+const Search = () => {
+    const [query, setQuery] = useState("");
+    const handleChange = (event) => {
+      console.log(event); 
+      console.log(event.target.value); 
+      setQuery(event.target.value); 
+    };
+  
+    return (
+      <div>
+        <label htmlFor="search">Search: </label>
+        <input
+          id="search"
+          type="text"
+          value={query} 
+          onChange={handleChange}
+        />
+      </div>
+    );
+  };
+  
+const Pro = () => (
     <div>
       <h1>Hello {getTitle("React")}</h1>
       <h1>My Hacker Stories</h1>
@@ -59,6 +66,4 @@ function Pro() {
       <List />
     </div>
   );
-}
-
 export default Pro ;
