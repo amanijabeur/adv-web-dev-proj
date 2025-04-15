@@ -1,9 +1,8 @@
-import React, { useState } from 'react';
+import React from 'react';
 import './style.css';
-import Pro from './Pro';
+import Pro from './pro';
 
 function App() {
-  const [count, setCount] = useState(0);
 
   return (
     <div>
@@ -18,7 +17,7 @@ function App() {
         </section>
       </main>
       <Pro />
-
+      
       <footer>
         <p>© 2025 React Project Website by Ameni Jabeur</p>
       </footer>
@@ -26,6 +25,7 @@ function App() {
   );
 }
 export default App;
+
 
 
 
