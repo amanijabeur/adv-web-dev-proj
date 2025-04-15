@@ -6,12 +6,10 @@ function App() {
 
   return (
     <div>
-      <h1>Hello React</h1>
       <header>
         <h1>Welcome to My Website</h1>
         <p>This is my first website using React!</p>
       </header>
-
       <main>
         <section>
           <h2>About Me</h2>
