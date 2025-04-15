@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import './style.css';
+import Pro from './Pro';
 
 function App() {
   const [count, setCount] = useState(0);
@@ -16,6 +17,7 @@ function App() {
           <p>Hello, I am Ameni Jabeur, a sophomore student at TBS.</p>
         </section>
       </main>
+      <Pro />
 
       <footer>
         <p>© 2025 React Project Website by Ameni Jabeur</p>
