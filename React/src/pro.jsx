@@ -24,6 +24,7 @@ const Search = () => {
     const handleChange = (event) => {
       console.log("Input changed:", event.target.value);
       setSearchTerm(event.target.value); 
+      props.onSearch(event);
     };
   
     return (
@@ -60,11 +61,14 @@ const Pro = () => {
       objectID: 1,
     },
   ];
+  const handleSearch = (event) => {
+    console.log(event.target.value);
+  };
   return (
     <div>
       <h1>Hello {getTitle("React")}</h1>
       <h1>My Hacker Stories</h1>
-      <Search />
+      <Search onSearch={handleSearch} />
       <hr />
       <List list={stories} />
     </div>
