@@ -19,11 +19,11 @@ const Item = (props) => (
 );
 
 const Search = () => {
-    const [query, setQuery] = useState("");
+    console.log("Search renders");
+    const [searchTerm, setSearchTerm] = React.useState("");
     const handleChange = (event) => {
-      console.log(event); 
-      console.log(event.target.value); 
-      setQuery(event.target.value); 
+      console.log("Input changed:", event.target.value);
+      setSearchTerm(event.target.value); 
     };
   
     return (
@@ -32,9 +32,11 @@ const Search = () => {
         <input
           id="search"
           type="text"
-          value={query} 
           onChange={handleChange}
         />
+        <p>
+          Searching for <strong>{searchTerm}</strong>.
+        </p>
       </div>
     );
   };
